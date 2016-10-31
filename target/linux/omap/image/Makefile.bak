@@ -43,7 +43,6 @@ define Image/Build/BBB
 	mcopy -i $(KDIR)/boot.img $(BIN_DIR)/uboot-$(BOARD)-am335x_evm/u-boot.img ::
 	mcopy -i $(KDIR)/boot.img $(DTS_DIR)/am335x-boneblack.dtb ::
 	mcopy -i $(KDIR)/boot.img $(KDIR)/zImage ::
-	mcopy -i $(KDIR)/boot.img uEnv.txt ::
 	../../brcm2708/image/gen_rpi_sdcard_img.sh $(BIN_DIR)/$(IMG_PREFIX)-combined-vfat-$(1).img $(KDIR)/boot.img $(KDIR)/root.$(1) \
 		$(CONFIG_BBB_BOOT_PARTSIZE) $(CONFIG_TARGET_ROOTFS_PARTSIZE)
 endef
